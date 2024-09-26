@@ -113,35 +113,38 @@ http://localhost:3000
 
 1. **Obter Todas as Tarefas**
 
-_URL: /tasks
-Método: GET
-Descrição: Recupera uma lista de todas as tarefas.
-Resposta: 200 OK com um array de objetos de tarefa._
+- URL: /tasks
+- Método: GET
+- Descrição: Recupera uma lista de todas as tarefas.
+- Resposta: 200 OK com um array de objetos de tarefa.
 
 2. **Obter Tarefa por ID**
 
-URL: /tasks/:id
-Método: GET
-Descrição: Recupera uma tarefa específica pelo seu ID.
-Resposta:
-200 OK com o objeto da tarefa.
-404 Not Found se a tarefa não for encontrada.
-Criar uma Nova Tarefa
+- URL: /tasks/:id
+- Método: GET
+- Descrição: Recupera uma tarefa específica pelo seu ID.
+- Resposta:
+  _ 200 OK com o objeto da tarefa.
+  _ 404 Not Found se a tarefa não for encontrada.
 
-URL: /tasks
-Método: POST
-Descrição: Cria uma nova tarefa com um título e descrição opcional.
-Body:
-json
-Copiar código
-{
-"title": "Título da Tarefa",
-"description": "Descrição da Tarefa"
-}
-Resposta:
-201 Created com o objeto da tarefa criada.
-400 Bad Request se a validação falhar.
-Atualizar uma Tarefa Existente
+3. **Criar uma Nova Tarefa**
+
+- URL: /tasks
+- Método: POST
+- Descrição: Cria uma nova tarefa com um título e descrição opcional.
+- Body:
+
+  ```json
+  {
+    "title": "Título da Tarefa",
+    "description": "Descrição da Tarefa"
+  }
+  ```
+
+  Resposta:
+  201 Created com o objeto da tarefa criada.
+  400 Bad Request se a validação falhar.
+  Atualizar uma Tarefa Existente
 
 URL: /tasks/:id
 Método: PUT
