@@ -32,7 +32,7 @@ describe('TasksController (e2e)', () => {
     await app.close();
   });
 
-  describe('/GET', () => {
+  describe('/GET getHealt()', () => {
     it('should return a health app sigh', () => {
       return request(app.getHttpServer())
         .get('/')
@@ -153,7 +153,7 @@ describe('TasksController (e2e)', () => {
         });
     });
 
-    it('should update an task 2 status', async () => {
+    it('should update an task 2 status, status 200', async () => {
       const updateData = {
         status: 'em progresso',
       };
@@ -186,7 +186,7 @@ describe('TasksController (e2e)', () => {
         });
     });
 
-    it('should update an task 2 status', async () => {
+    it('should update an task 2 status, status 200', async () => {
       const updateData = {
         status: 'concluída',
       };
