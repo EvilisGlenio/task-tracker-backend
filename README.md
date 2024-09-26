@@ -66,3 +66,111 @@ cd task-tracker-backend
 ```bash
 npm install
 ```
+
+## Configuration
+
+Nenhuma configuração adicional é necessária para o uso básico. A aplicação utiliza um arquivo JSON (tasks.json) localizado no diretório do projeto para armazenar os dados das tarefas.
+
+## Running the Application
+
+### Development Mode
+
+Para rodar a aplicação em modo de desenvolvimento com recarregamento automático:
+
+```bash
+npm run start:dev
+```
+
+A aplicação será iniciada em http://localhost:3000.
+
+### Production Mode
+
+Para construir e rodar a aplicação em modo de produção:
+
+1. **Build do Projeto:**
+
+```bash
+npm run build
+```
+
+2. **Iniciar a Aplicação:**
+
+```bash
+npm run start:prod
+```
+
+## API Endpoints
+
+O backend do Task Tracker expõe os seguintes endpoints RESTful para gerenciamento de tarefas:
+
+### Base URL
+
+```bash
+http://localhost:3000
+```
+
+### Endpoints
+
+1. **Obter Todas as Tarefas**
+
+_URL: /tasks
+Método: GET
+Descrição: Recupera uma lista de todas as tarefas.
+Resposta: 200 OK com um array de objetos de tarefa._
+
+2. **Obter Tarefa por ID**
+
+URL: /tasks/:id
+Método: GET
+Descrição: Recupera uma tarefa específica pelo seu ID.
+Resposta:
+200 OK com o objeto da tarefa.
+404 Not Found se a tarefa não for encontrada.
+Criar uma Nova Tarefa
+
+URL: /tasks
+Método: POST
+Descrição: Cria uma nova tarefa com um título e descrição opcional.
+Body:
+json
+Copiar código
+{
+"title": "Título da Tarefa",
+"description": "Descrição da Tarefa"
+}
+Resposta:
+201 Created com o objeto da tarefa criada.
+400 Bad Request se a validação falhar.
+Atualizar uma Tarefa Existente
+
+URL: /tasks/:id
+Método: PUT
+Descrição: Atualiza o título, descrição ou status de uma tarefa existente.
+Body:
+json
+Copiar código
+{
+"title": "Título Atualizado",
+"description": "Descrição Atualizada",
+"status": "em progresso" // ou "concluída", "pendente"
+}
+Resposta:
+200 OK com o objeto da tarefa atualizada.
+404 Not Found se a tarefa não for encontrada.
+400 Bad Request se a validação falhar.
+Deletar uma Tarefa
+
+URL: /tasks/:id
+Método: DELETE
+Descrição: Remove uma tarefa pelo seu ID.
+Resposta:
+200 OK após a remoção bem-sucedida.
+404 Not Found se a tarefa não for encontrada.
+Obter Tarefas por Status
+
+URL: /tasks/status/:status
+Método: GET
+Descrição: Recupera tarefas filtradas pelo seu status (pendente, em progresso, concluída).
+Resposta:
+200 OK com um array de objetos de tarefa que correspondem ao status.
+Retorna um array vazio se nenhuma tarefa corresponder.
