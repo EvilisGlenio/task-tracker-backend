@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "title": "Nova Tarefa",
+    "subtitle": "Descrição da nova tarefa",
+    "status": "pendente"
+  },
+  {
+    "id": "2",
+    "title": "Segunda tarefa",
+    "subtitle": "Tarefa em progresso",
+    "status": "em progresso"
+  },
+  {
+    "id": "3",
+    "title": "Terceira tarefa",
+    "subtitle": "Tarefa concluída",
+    "status": "concluída"
+  }
+]
