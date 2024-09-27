@@ -33,7 +33,7 @@ Task Tracker is a simple CLI application designed to help you manage your to-do 
 
 ## Technologies Used
 
-- **[Nest.js](https://nestjs.com/):** A progressive Node.js framework for building efficient and scalable server-side applications.
+- **Nest.js:** A progressive Node.js framework for building efficient and scalable server-side applications.
 - **TypeScript:** Provides static typing to enhance code quality and maintainability.
 - **Jest:** A JavaScript testing framework used for writing and running tests.
 - **Supertest:** Used for testing HTTP endpoints.
@@ -124,8 +124,8 @@ http://localhost:3000
 - Método: GET
 - Descrição: Recupera uma tarefa específica pelo seu ID.
 - Resposta:
-  - - 200 OK com o objeto da tarefa.
-  - - 404 Not Found se a tarefa não for encontrada.
+  - 200 OK com o objeto da tarefa.
+  - 404 Not Found se a tarefa não for encontrada.
 
 3. **Criar uma Nova Tarefa**
 
@@ -142,9 +142,8 @@ http://localhost:3000
   ```
 
   - Resposta
-
-  * - 201 Created com o objeto da tarefa criada.
-  * - 400 Bad Request se a validação falhar.
+    - 201 Created com o objeto da tarefa criada.
+    - 400 Bad Request se a validação falhar.
 
 4. **Atualizar uma Tarefa Existente**
 
@@ -162,9 +161,9 @@ http://localhost:3000
   ```
 
   - Resposta:
-  - - 200 OK com o objeto da tarefa atualizada.
-  - - 404 Not Found se a tarefa não for encontrada.
-  - - 400 Bad Request se a validação falhar.
+  - 200 OK com o objeto da tarefa atualizada.
+  - 404 Not Found se a tarefa não for encontrada.
+  - 400 Bad Request se a validação falhar.
 
 5. **Deletar uma Tarefa**
 
@@ -172,8 +171,8 @@ http://localhost:3000
 - Método: DELETE
 - Descrição: Remove uma tarefa pelo seu ID.
 - Resposta:
-  - - 200 OK após a remoção bem-sucedida.
-  - - 404 Not Found se a tarefa não for encontrada.
+  - 200 OK após a remoção bem-sucedida.
+  - 404 Not Found se a tarefa não for encontrada.
 
 6. **Obter Tarefas por Status**
 
@@ -181,8 +180,8 @@ http://localhost:3000
 - Método: GET
 - Descrição: Recupera tarefas filtradas pelo seu status (pendente, em progresso, concluída).
 - Resposta:
-  - - 200 OK com um array de objetos de tarefa que correspondem ao status.
-  - - Retorna um array vazio se nenhuma tarefa corresponder.
+  - 200 OK com um array de objetos de tarefa que correspondem ao status.
+  - Retorna um array vazio se nenhuma tarefa corresponder.
 
 ### Exemplos de Respostas
 
@@ -277,14 +276,14 @@ Durante o desenvolvimento, utilizei a extensão Thunder Client no Visual Studio 
 
 - **Instalação:**
 
-  - - Abra o VSCode.
-  - - Vá para a aba de extensões (Ctrl+Shift+X ou Cmd+Shift+X no macOS).
-  - - Procure por "Thunder Client" e instale a extensão.
+  - Abra o VSCode.
+  - Vá para a aba de extensões (Ctrl+Shift+X ou Cmd+Shift+X no macOS).
+  - Procure por "Thunder Client" e instale a extensão.
 
 - **Uso:**
-  - - Após a instalação, abra o painel do Thunder Client.
-  - - Crie novas requisições HTTP, configure os métodos e os endpoints, adicione headers e body conforme necessário.
-  - - Envie as requisições e visualize as respostas diretamente no VSCode.
+  - Após a instalação, abra o painel do Thunder Client.
+  - Crie novas requisições HTTP, configure os métodos e os endpoints, adicione headers e body conforme necessário.
+  - Envie as requisições e visualize as respostas diretamente no VSCode.
 
 **Vantagens do Thunder Client:**
 
@@ -297,19 +296,19 @@ Durante o desenvolvimento, utilizei a extensão Thunder Client no Visual Studio 
 
 ### Adicionando uma Tarefa
 
-Use o endpoint [POST /tasks] para adicionar uma nova tarefa. Certifique-se de fornecer pelo menos o title da tarefa.
+Use o endpoint **POST /tasks** para adicionar uma nova tarefa. Certifique-se de fornecer pelo menos o title da tarefa.
 
 ### Listando Tarefas
 
-Use o endpoint [GET /tasks] para recuperar todas as tarefas, ou filtre-as por status usando [GET /tasks/status/:status].
+Use o endpoint **GET /tasks** para recuperar todas as tarefas, ou filtre-as por status usando **GET /tasks/status/:status**.
 
 ### Atualizando uma Tarefa
 
-Use o endpoint [PUT /tasks/:id] para atualizar os detalhes ou status de uma tarefa existente.
+Use o endpoint **PUT /tasks/:id** para atualizar os detalhes ou status de uma tarefa existente.
 
 ### Deletando uma Tarefa
 
-Use o endpoint [DELETE /tasks/:id] para remover uma tarefa.
+Use o endpoint **DELETE /tasks/:id** para remover uma tarefa.
 
 ## Contributing
 
@@ -344,7 +343,7 @@ Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE]() par
 
 ## Acknowledgments
 
-[Nest.js](https://nestjs.com/) - The progressive Node.js framework.
-[Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) - A lightweight REST API client for VSCode.
-[Jest](https://jestjs.io/) - Delightful JavaScript Testing Framework.
-[Supertest](https://github.com/visionmedia/supertest) - Super-agent driven library for testing node.js HTTP servers.
+- [Nest.js](https://nestjs.com/) - The progressive Node.js framework.
+- [Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) - A lightweight REST API client for VSCode.
+- [Jest](https://jestjs.io/) - Delightful JavaScript Testing Framework.
+- [Supertest](https://github.com/visionmedia/supertest) - Super-agent driven library for testing node.js HTTP servers.
