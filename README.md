@@ -1,61 +1,61 @@
 # Task Tracker Backend
 
-A command-line interface (CLI) application to track your tasks and manage your to-do list. Built with **Nest.js**, this backend service allows you to add, update, delete, and list tasks, with data persisted in a JSON file.
+Uma aplicação de interface de linha de comando (CLI) para rastrear suas tarefas e gerenciar sua lista de afazeres. Construída com **Nest.js**, este serviço backend permite que você adicione, atualize, exclua e liste tarefas, com os dados sendo persistidos em um arquivo JSON.
 
-## Table of Contents
+## Sumário
 
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Configuration](#configuration)
-- [Running the Application](#running-the-application)
-- [API Endpoints](#api-endpoints)
-- [Testing](#testing)
-- [Tools](#tools)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+- [Introdução](#introdução)
+- [Funcionalidades](#funcionalidades)
+- [Tecnologias Utilizadas](#tecnologias-utilizadas)
+- [Instalação](#instalação)
+- [Configuração](#configuração)
+- [Executando a Aplicação](#executando-a-aplicação)
+- [Endpoints da API](#endpoints-da-api)
+- [Testes](#testes)
+- [Ferramentas](#ferramentas)
+- [Uso](#uso)
+- [Contribuindo](#contribuindo)
+- [Licença](#licença)
 
-## Introduction
+## Introdução
 
-Task Tracker is a simple CLI application designed to help you manage your to-do list efficiently. Built with **Nest.js**, the application provides a RESTful API to handle task operations, with data stored in a JSON file for simplicity and ease of use.
+Task Tracker é uma aplicação CLI simples projetada para ajudá-lo a gerenciar sua lista de tarefas de forma eficiente. Construída com **Nest.js**, a aplicação fornece uma API RESTful para lidar com operações de tarefas, com os dados armazenados em um arquivo JSON para simplicidade e facilidade de uso.
 
-## Features
+## Funcionalidades
 
-- **Add Tasks:** Create new tasks with titles and optional descriptions.
-- **Update Tasks:** Modify existing tasks, including changing their status.
-- **Delete Tasks:** Remove tasks from your to-do list.
-- **List Tasks:** View all tasks or filter them based on their status (e.g., pending, in progress, completed).
-- **Persistent Storage:** Tasks are stored in a JSON file, eliminating the need for a database.
-- **Validation:** Ensures data integrity with proper validation rules.
-- **Testing:** Comprehensive end-to-end (e2e) tests to ensure application reliability.
+- **Adicionar Tarefas:** Criar novas tarefas com título e descrições opcionais.
+- **Atualizar Tarefas:** Modificar tarefas existentes, incluindo alterar o status.
+- **Excluir Tarefas:** Remover tarefas da sua lista de afazeres.
+- **Listar Tarefas:** Visualizar todas as tarefas ou filtrá-las com base no status (ex: pendente, em progresso, concluída).
+- **Armazenamento Persistente:** As tarefas são armazenadas em um arquivo JSON, eliminando a necessidade de um banco de dados.
+- **Validação:** Garante a integridade dos dados com regras de validação apropriadas.
+- **Testes:** Testes completos end-to-end (e2e) para garantir a confiabilidade da aplicação.
 
-## Technologies Used
+## Tecnologias Utilizadas
 
-- **Nest.js:** A progressive Node.js framework for building efficient and scalable server-side applications.
-- **TypeScript:** Provides static typing to enhance code quality and maintainability.
-- **Jest:** A JavaScript testing framework used for writing and running tests.
-- **Supertest:** Used for testing HTTP endpoints.
-- **Thunder Client:** A REST API client extension for Visual Studio Code, used for testing the API during development.
-- **Node.js:** JavaScript runtime environment.
+- **[Nest.js](https://nestjs.com/):** Um framework progressivo do Node.js para construir aplicações server-side eficientes e escaláveis.
+- **TypeScript:** Proporciona tipagem estática para melhorar a qualidade e a manutenção do código.
+- **Jest:** Framework de testes JavaScript utilizado para escrever e executar testes.
+- **Supertest:** Usado para testar os endpoints HTTP.
+- **Thunder Client:** Uma extensão cliente de API REST para Visual Studio Code, usada para testar a API durante o desenvolvimento.
+- **Node.js:** Ambiente de execução de JavaScript.
 
-## Installation
+## Instalação
 
-### Prerequisites
+### Pré-requisitos
 
-- **Node.js** (v14 or later)
-- **npm** (v6 or later)
+- **Node.js** (v14 ou superior)
+- **npm** (v6 ou superior)
 
-### Steps
+### Passos
 
-1. **Clone the Repository:**
+1. **Clone o Repositório:**
 
    ```bash
    git clone https://github.com/seu-usuario/task-tracker-backend.git
    ```
 
-2. **Navigate to the Project Directory:**
+2. **Navegue até o Diretório do Projeto::**
 
 ```bash
 cd task-tracker-backend
@@ -67,13 +67,13 @@ cd task-tracker-backend
 npm install
 ```
 
-## Configuration
+## Configuração
 
 Nenhuma configuração adicional é necessária para o uso básico. A aplicação utiliza um arquivo JSON (tasks.json) localizado no diretório do projeto para armazenar os dados das tarefas.
 
-## Running the Application
+## Executando a Aplicação
 
-### Development Mode
+### Modo de Desenvolvimento
 
 Para rodar a aplicação em modo de desenvolvimento com recarregamento automático:
 
@@ -83,23 +83,23 @@ npm run start:dev
 
 A aplicação será iniciada em http://localhost:3000.
 
-### Production Mode
+### Modo de Produção
 
 Para construir e rodar a aplicação em modo de produção:
 
-1. **Build do Projeto:**
+1. **Compile o Projeto:**
 
 ```bash
 npm run build
 ```
 
-2. **Iniciar a Aplicação:**
+2. **Inicie a Aplicação:**
 
 ```bash
 npm run start:prod
 ```
 
-## API Endpoints
+## Endpoints da API
 
 O backend do Task Tracker expõe os seguintes endpoints RESTful para gerenciamento de tarefas:
 
@@ -204,7 +204,7 @@ GET /tasks
 }
 ```
 
-## Testing
+## Testes
 
 ### Testes End-to-End (E2E)
 
@@ -268,7 +268,7 @@ Content-Type: application/json
 }
 ```
 
-## Tools
+## Ferramentas
 
 ### Thunder Client
 
@@ -310,38 +310,38 @@ Use o endpoint **PUT /tasks/:id** para atualizar os detalhes ou status de uma ta
 
 Use o endpoint **DELETE /tasks/:id** para remover uma tarefa.
 
-## Contributing
+## Contribuindo
 
 Contribuições são bem-vindas! Por favor, siga os seguintes passos:
 
-1. **Fork the Repository**
+1. **Fork o Repositório**
 
-2. **Create a Feature Branch:**
+2. **Crie uma Branch de Funcionalidade::**
 
 ```bash
 git checkout -b feature/SuaFuncionalidade
 ```
 
-3. **Commit Your Changes:**
+3. **Commit suas Alterações:**
 
 ```bash
 git commit -m "Adiciona nova funcionalidade"
 ```
 
-4.  **Push to the Branch:**
+4.  **Faça o Push da Branch:**
 
 ```bash
 git push origin feature/SuaFuncionalidade
 ```
 
-5. **Open a Pull Request**
+5. **Abra um Pull Request**
    Por favor, certifique-se de que seu código segue os padrões de codificação do projeto e inclua testes apropriados.
 
-## License
+## Licença
 
 Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE]() para mais detalhes.
 
-## Acknowledgments
+## Agradecimentos
 
 - [Nest.js](https://nestjs.com/) - The progressive Node.js framework.
 - [Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) - A lightweight REST API client for VSCode.
