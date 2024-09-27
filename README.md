@@ -124,8 +124,8 @@ http://localhost:3000
 - Método: GET
 - Descrição: Recupera uma tarefa específica pelo seu ID.
 - Resposta:
-  _ 200 OK com o objeto da tarefa.
-  _ 404 Not Found se a tarefa não for encontrada.
+  - - 200 OK com o objeto da tarefa.
+  - - 404 Not Found se a tarefa não for encontrada.
 
 3. **Criar uma Nova Tarefa**
 
@@ -141,39 +141,210 @@ http://localhost:3000
   }
   ```
 
-  Resposta:
-  201 Created com o objeto da tarefa criada.
-  400 Bad Request se a validação falhar.
-  Atualizar uma Tarefa Existente
+  - Resposta
 
-URL: /tasks/:id
-Método: PUT
-Descrição: Atualiza o título, descrição ou status de uma tarefa existente.
-Body:
-json
-Copiar código
+  * - 201 Created com o objeto da tarefa criada.
+  * - 400 Bad Request se a validação falhar.
+
+4. **Atualizar uma Tarefa Existente**
+
+- URL: /tasks/:id
+- Método: PUT
+- Descrição: Atualiza o título, descrição ou status de uma tarefa existente.
+- Body:
+
+  ```json
+  {
+    "title": "Título Atualizado",
+    "description": "Descrição Atualizada",
+    "status": "em progresso", "concluída", "pendente"
+  }
+  ```
+
+  - Resposta:
+  - - 200 OK com o objeto da tarefa atualizada.
+  - - 404 Not Found se a tarefa não for encontrada.
+  - - 400 Bad Request se a validação falhar.
+
+5. **Deletar uma Tarefa**
+
+- URL: /tasks/:id
+- Método: DELETE
+- Descrição: Remove uma tarefa pelo seu ID.
+- Resposta:
+  - - 200 OK após a remoção bem-sucedida.
+  - - 404 Not Found se a tarefa não for encontrada.
+
+6. **Obter Tarefas por Status**
+
+- URL: /tasks/status/:status
+- Método: GET
+- Descrição: Recupera tarefas filtradas pelo seu status (pendente, em progresso, concluída).
+- Resposta:
+  - - 200 OK com um array de objetos de tarefa que correspondem ao status.
+  - - Retorna um array vazio se nenhuma tarefa corresponder.
+
+### Exemplos de Respostas
+
+#### Obter Todas as Tarefas
+
+#### Requisição:
+
+```http
+GET /tasks
+```
+
+#### Resposta:
+
+```json
 {
-"title": "Título Atualizado",
-"description": "Descrição Atualizada",
-"status": "em progresso" // ou "concluída", "pendente"
+  "id": "1",
+  "title": "Comprar leite",
+  "description": "Comprar leite no supermercado",
+  "status": "pendente"
 }
-Resposta:
-200 OK com o objeto da tarefa atualizada.
-404 Not Found se a tarefa não for encontrada.
-400 Bad Request se a validação falhar.
-Deletar uma Tarefa
+```
 
-URL: /tasks/:id
-Método: DELETE
-Descrição: Remove uma tarefa pelo seu ID.
-Resposta:
-200 OK após a remoção bem-sucedida.
-404 Not Found se a tarefa não for encontrada.
-Obter Tarefas por Status
+## Testing
 
-URL: /tasks/status/:status
-Método: GET
-Descrição: Recupera tarefas filtradas pelo seu status (pendente, em progresso, concluída).
-Resposta:
-200 OK com um array de objetos de tarefa que correspondem ao status.
-Retorna um array vazio se nenhuma tarefa corresponder.
+### Testes End-to-End (E2E)
+
+O projeto inclui testes end-to-end para garantir que todos os endpoints da API funcionem conforme o esperado. Os testes são escritos usando Jest e Supertest.
+
+### Executando os Testes
+
+1. **Certifique-se de que as Dependências estão Instaladas:**
+
+```bash
+npm install
+```
+
+2. **Rodar os Testes E2E:**
+
+```bash
+npm run test:e2e
+```
+
+### Estrutura dos Testes
+
+Os testes E2E estão localizados no diretório test e cobrem os seguintes cenários:
+
+- Recuperação de todas as tarefas.
+- Recuperação de uma tarefa específica por ID.
+- Criação de novas tarefas.
+- Atualização de tarefas existentes.
+- Deleção de tarefas.
+- Filtragem de tarefas por status.
+- Tratamento de casos de erro (por exemplo, tarefa não encontrada, erros de validação).
+
+### Exemplos de Comandos de Teste
+
+- **Obter Todas as Tarefas:**
+
+```http
+GET /tasks
+```
+
+- **Criar uma Nova Tarefa:**
+
+```bash
+POST /tasks
+
+Content-Type: application/json
+
+{
+"title": "Nova Tarefa",
+"description": "Descrição da nova tarefa"
+}
+```
+
+- **Atualizar uma Tarefa:**
+
+```http
+PUT /tasks/1
+Content-Type: application/json
+
+{
+"status": "concluída"
+}
+```
+
+## Tools
+
+### Thunder Client
+
+Durante o desenvolvimento, utilizei a extensão Thunder Client no Visual Studio Code para testar e interagir com os endpoints da API de forma rápida e eficiente.
+
+- **Instalação:**
+
+  - - Abra o VSCode.
+  - - Vá para a aba de extensões (Ctrl+Shift+X ou Cmd+Shift+X no macOS).
+  - - Procure por "Thunder Client" e instale a extensão.
+
+- **Uso:**
+  - - Após a instalação, abra o painel do Thunder Client.
+  - - Crie novas requisições HTTP, configure os métodos e os endpoints, adicione headers e body conforme necessário.
+  - - Envie as requisições e visualize as respostas diretamente no VSCode.
+
+**Vantagens do Thunder Client:**
+
+- **Integração com VSCode:** Permite realizar testes sem sair do editor de código.
+- **Interface Intuitiva:** Facilita a criação e gerenciamento de requisições.
+- **Salvar Coleções:** Organize suas requisições em coleções para reutilização futura.
+- **Visualização de Respostas:** Visualize respostas de forma estruturada e clara.
+
+## Usage
+
+### Adicionando uma Tarefa
+
+Use o endpoint [POST /tasks] para adicionar uma nova tarefa. Certifique-se de fornecer pelo menos o title da tarefa.
+
+### Listando Tarefas
+
+Use o endpoint [GET /tasks] para recuperar todas as tarefas, ou filtre-as por status usando [GET /tasks/status/:status].
+
+### Atualizando uma Tarefa
+
+Use o endpoint [PUT /tasks/:id] para atualizar os detalhes ou status de uma tarefa existente.
+
+### Deletando uma Tarefa
+
+Use o endpoint [DELETE /tasks/:id] para remover uma tarefa.
+
+## Contributing
+
+Contribuições são bem-vindas! Por favor, siga os seguintes passos:
+
+1. **Fork the Repository**
+
+2. **Create a Feature Branch:**
+
+```bash
+git checkout -b feature/SuaFuncionalidade
+```
+
+3. **Commit Your Changes:**
+
+```bash
+git commit -m "Adiciona nova funcionalidade"
+```
+
+4.  **Push to the Branch:**
+
+```bash
+git push origin feature/SuaFuncionalidade
+```
+
+5. **Open a Pull Request**
+   Por favor, certifique-se de que seu código segue os padrões de codificação do projeto e inclua testes apropriados.
+
+## License
+
+Este projeto está licenciado sob a Licença MIT. Veja o arquivo [LICENSE]() para mais detalhes.
+
+## Acknowledgments
+
+[Nest.js](https://nestjs.com/) - The progressive Node.js framework.
+[Thunder Client](https://marketplace.visualstudio.com/items?itemName=rangav.vscode-thunder-client) - A lightweight REST API client for VSCode.
+[Jest](https://jestjs.io/) - Delightful JavaScript Testing Framework.
+[Supertest](https://github.com/visionmedia/supertest) - Super-agent driven library for testing node.js HTTP servers.
